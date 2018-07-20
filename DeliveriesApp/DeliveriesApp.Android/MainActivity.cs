@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -41,9 +41,29 @@ namespace DeliveriesApp.Droid
             StartActivity(intent);
         }
 
-        private void SigninButton_Click(object sender, EventArgs e)
+        private async void SigninButton_Click(object sender, EventArgs e)
         {
-            
+            var email = _emailEditText.Text;
+            var password = _passwordEditText.Text;
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                Toast.MakeText(this, "Email or password cannot be empty", ToastLength.Long).Show();
+                return;
+            }
+
+            var user = (await MobileService.GetTable<User>().Where(u => u.Email == email).ToListAsync()).FirstOrDefault();
+
+            if (user == null) return;
+
+            if(user.Password == password)
+            {
+                Toast.MakeText(this, "Login successful", ToastLength.Long).Show();
+            }
+            else
+            {
+                Toast.MakeText(this, "Incorrect password", ToastLength.Long).Show();
+            }
+
         }
     }
 }
