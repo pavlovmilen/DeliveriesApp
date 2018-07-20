@@ -26,6 +26,35 @@ namespace DeliveriesApp.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Xamarin.Auth._MobileServices.Resource.Animation.slide_in_right = global::DeliveriesApp.Droid.Resource.Animation.slide_in_right;
+			global::Xamarin.Auth._MobileServices.Resource.Animation.slide_out_left = global::DeliveriesApp.Droid.Resource.Animation.slide_out_left;
+			global::Xamarin.Auth._MobileServices.Resource.Drawable.ic_arrow_back = global::DeliveriesApp.Droid.Resource.Drawable.ic_arrow_back;
+			global::Xamarin.Auth._MobileServices.Resource.Id.webview = global::DeliveriesApp.Droid.Resource.Id.webview;
+			global::Xamarin.Auth._MobileServices.Resource.Layout.activity_webview = global::DeliveriesApp.Droid.Resource.Layout.activity_webview;
+			global::Xamarin.Auth._MobileServices.Resource.String.ApplicationName = global::DeliveriesApp.Droid.Resource.String.ApplicationName;
+			global::Xamarin.Auth._MobileServices.Resource.String.Hello = global::DeliveriesApp.Droid.Resource.String.Hello;
+			global::Xamarin.Auth._MobileServices.Resource.String.title_activity_webview = global::DeliveriesApp.Droid.Resource.String.title_activity_webview;
+			global::PCLCrypto.Resource.String.ApplicationName = global::DeliveriesApp.Droid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::DeliveriesApp.Droid.Resource.String.Hello;
+		}
+		
+		public partial class Animation
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int slide_in_right = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int slide_out_left = 2130968577;
+			
+			static Animation()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Animation()
+			{
+			}
 		}
 		
 		public partial class Attribute
@@ -45,7 +74,10 @@ namespace DeliveriesApp.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int ic_arrow_back = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int Icon = 2130837505;
 			
 			static Drawable()
 			{
@@ -60,29 +92,32 @@ namespace DeliveriesApp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050006
-			public const int confirmPasswordEditText = 2131034118;
+			// aapt resource value: 0x7f060007
+			public const int confirmPasswordEditText = 2131099655;
 			
-			// aapt resource value: 0x7f050000
-			public const int emailEditText = 2131034112;
+			// aapt resource value: 0x7f060001
+			public const int emailEditText = 2131099649;
 			
-			// aapt resource value: 0x7f050001
-			public const int passwordEditText = 2131034113;
+			// aapt resource value: 0x7f060002
+			public const int passwordEditText = 2131099650;
 			
-			// aapt resource value: 0x7f050003
-			public const int registerButton = 2131034115;
+			// aapt resource value: 0x7f060004
+			public const int registerButton = 2131099652;
 			
-			// aapt resource value: 0x7f050004
-			public const int registerEmailEditText = 2131034116;
+			// aapt resource value: 0x7f060005
+			public const int registerEmailEditText = 2131099653;
 			
-			// aapt resource value: 0x7f050005
-			public const int registerPasswordEditText = 2131034117;
+			// aapt resource value: 0x7f060006
+			public const int registerPasswordEditText = 2131099654;
 			
-			// aapt resource value: 0x7f050007
-			public const int registerUserButton = 2131034119;
+			// aapt resource value: 0x7f060008
+			public const int registerUserButton = 2131099656;
 			
-			// aapt resource value: 0x7f050002
-			public const int signinButton = 2131034114;
+			// aapt resource value: 0x7f060003
+			public const int signinButton = 2131099651;
+			
+			// aapt resource value: 0x7f060000
+			public const int webview = 2131099648;
 			
 			static Id()
 			{
@@ -98,10 +133,13 @@ namespace DeliveriesApp.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int activity_webview = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Register = 2130903041;
+			public const int Main = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int Register = 2130903042;
 			
 			static Layout()
 			{
@@ -116,11 +154,20 @@ namespace DeliveriesApp.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int app_name = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int ApplicationName = 2131034113;
 			
-			// aapt resource value: 0x7f040000
-			public const int hello = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int Hello = 2131034112;
+			
+			// aapt resource value: 0x7f050004
+			public const int app_name = 2131034116;
+			
+			// aapt resource value: 0x7f050003
+			public const int hello = 2131034115;
+			
+			// aapt resource value: 0x7f050002
+			public const int title_activity_webview = 2131034114;
 			
 			static String()
 			{

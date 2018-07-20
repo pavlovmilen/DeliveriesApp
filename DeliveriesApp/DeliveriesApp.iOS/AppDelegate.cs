@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
 namespace DeliveriesApp.iOS
@@ -10,6 +11,9 @@ namespace DeliveriesApp.iOS
 	{
 		// class-level declarations
 
+        public static  MobileServiceClient MobileService = new MobileServiceClient("https://jukadeliveriesapp.azurewebsites.net");
+
+
 		public override UIWindow Window {
 			get;
 			set;
@@ -19,6 +23,7 @@ namespace DeliveriesApp.iOS
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
+		    CurrentPlatform.Init();
 			return true;
 		}
 

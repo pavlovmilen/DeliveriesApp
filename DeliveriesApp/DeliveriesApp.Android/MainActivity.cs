@@ -6,12 +6,16 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace DeliveriesApp.Droid
 {
 	[Activity (Label = "Deliveries App", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
+	    public static  MobileServiceClient MobileService = new MobileServiceClient("https://jukadeliveriesapp.azurewebsites.net");
+
+
         private EditText _emailEditText, _passwordEditText;
         private Button _signinButton, _registerButton;
 		protected override void OnCreate (Bundle bundle)
