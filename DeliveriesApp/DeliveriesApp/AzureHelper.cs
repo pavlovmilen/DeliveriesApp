@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 
@@ -14,7 +15,6 @@ namespace DeliveriesApp
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                result = false;
             }
             else
             {
@@ -31,33 +31,32 @@ namespace DeliveriesApp
 
         public static async Task<bool> Register(string email, string password, string confirmPassword)
         {
-            var result = false;
+            if (string.IsNullOrEmpty(password)) return false;
+            if (password != confirmPassword) return false;
 
-            if(!string.IsNullOrEmpty(password) )
+            var user = new User
             {
-                if (password == confirmPassword)
-                {
-                    var user = new User
-                    {
-                        Email = email,
-                        Password = password
-                    };
+                Email = email,
+                Password = password
+            };
 
-                    await AzureHelper.MobileService.GetTable<User>().InsertAsync(user);
+            await Insert(user);
 
-                    result = true;
-                }
-                else
-                {
-                    result = false;
-                }
-            }
-            else
+            return true;
+        }
+
+        public static async Task<bool> Insert<T>(T objectToInsert)
+        {
+            try
             {
-                result = false;
-            }
+                await MobileService.GetTable<T>().InsertAsync(objectToInsert);
 
-            return result;
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
     }
 }
