@@ -13,8 +13,6 @@ namespace DeliveriesApp.Droid
 	[Activity (Label = "Deliveries App", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
-	    public static  MobileServiceClient MobileService = new MobileServiceClient("https://jukadeliveriesapp.azurewebsites.net");
-
 
         private EditText _emailEditText, _passwordEditText;
         private Button _signinButton, _registerButton;
@@ -43,19 +41,9 @@ namespace DeliveriesApp.Droid
 
         private async void SigninButton_Click(object sender, EventArgs e)
         {
-            var email = _emailEditText.Text;
-            var password = _passwordEditText.Text;
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
-            {
-                Toast.MakeText(this, "Email or password cannot be empty", ToastLength.Long).Show();
-                return;
-            }
+            var result = await AzureHelper.Login(_emailEditText.Text, _passwordEditText.Text);
 
-            var user = (await MobileService.GetTable<User>().Where(u => u.Email == email).ToListAsync()).FirstOrDefault();
-
-            if (user == null) return;
-
-            if(user.Password == password)
+            if (result)
             {
                 Toast.MakeText(this, "Login successful", ToastLength.Long).Show();
             }
@@ -63,7 +51,6 @@ namespace DeliveriesApp.Droid
             {
                 Toast.MakeText(this, "Incorrect password", ToastLength.Long).Show();
             }
-
         }
     }
 }

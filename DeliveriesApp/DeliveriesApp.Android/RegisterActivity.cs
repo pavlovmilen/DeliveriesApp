@@ -31,28 +31,16 @@ namespace DeliveriesApp.Droid
 
         private async void RegisterUser_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(_passwordEditText.Text) )
+            var result = await AzureHelper.Register(_emailEditText.Text, _passwordEditText.Text,
+                _confirmPasswordEditText.Text);
+
+            if(result)
             {
-                if (_passwordEditText.Text == _confirmPasswordEditText.Text)
-                {
-                    var user = new User
-                    {
-                        Email = _emailEditText.Text,
-                        Password = _passwordEditText.Text
-                    };
-
-                    await MainActivity.MobileService.GetTable<User>().InsertAsync(user);
-
-                    Toast.MakeText(this, "Success", ToastLength.Long).Show();
-                }
-                else
-                {
-                    Toast.MakeText(this, "Passwords do not match", ToastLength.Long).Show();
-                }
+                Toast.MakeText(this, "Success", ToastLength.Long).Show();
             }
             else
             {
-                Toast.MakeText(this, "Password cannot be empty", ToastLength.Long).Show();
+                Toast.MakeText(this, "Could not register", ToastLength.Long).Show();
             }
         }
     }

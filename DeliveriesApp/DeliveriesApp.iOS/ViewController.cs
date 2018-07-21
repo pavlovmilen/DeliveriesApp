@@ -20,31 +20,11 @@ namespace DeliveriesApp.iOS
 
         private async void SignInButton_TouchUpInside(object sender, EventArgs e)
         {
-            var email = EmailTextField.Text;
-            var password = PasswordTextField.Text;
+            var result = await AzureHelper.Login(EmailTextField.Text, PasswordTextField.Text);
 
-            UIAlertController alert = null;
+            var alert = UIAlertController.Create(result? "Success":"Failure", result? "Wellcome": "Invaild email or password", UIAlertControllerStyle.Alert );
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
-            {
-                alert = UIAlertController.Create("Incomplete", "Email or password cannot be empty", UIAlertControllerStyle.Alert);
-                alert.AddAction(UIAlertAction.Create("OK",UIAlertActionStyle.Default, null));
-            }
-            else
-            {
-                var user = (await AppDelegate.MobileService.GetTable<User>().Where(u => u.Email == email).ToListAsync()).FirstOrDefault();
-
-                if (user?.Password == password)
-                {
-                    alert = UIAlertController.Create("Succeed", "Welcome", UIAlertControllerStyle.Alert);
-                    alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-                }
-                else
-                {
-                    alert = UIAlertController.Create("Failure", "Password incorrect", UIAlertControllerStyle.Alert);
-                    alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-                }
-            }
+            alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
             PresentViewController(alert, true, null);
         }
@@ -67,4 +47,6 @@ namespace DeliveriesApp.iOS
 		}
 	}
 }
+
+
 

@@ -1,5 +1,4 @@
-﻿using Foundation;
-using System;
+﻿using System;
 using UIKit;
 
 namespace DeliveriesApp.iOS
@@ -22,19 +21,10 @@ namespace DeliveriesApp.iOS
 
         private async void RegisterButton_TouchUpInside(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(PasswordTextField.Text)) return;
-
-            if (PasswordTextField.Text != ConfirmPasswordTextField.Text) return;
-
-            var user = new User
-            {
-                Email = EmailTextfield.Text,
-                Password = PasswordTextField.Text
-            };
-
-            await AppDelegate.MobileService.GetTable<User>().InsertAsync(user);
-
-            var alert = UIAlertController.Create("Success", "User inserted", UIAlertControllerStyle.Alert);
+            var result = await AzureHelper.Register(EmailTextfield.Text, PasswordTextField.Text,
+                ConfirmPasswordTextField.Text);
+    
+            var alert = UIAlertController.Create(result ? "Success" : "Failure", result ? "User inserted" : "Could not register", UIAlertControllerStyle.Alert);
             alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
             PresentViewController(alert, true,null);
         }
