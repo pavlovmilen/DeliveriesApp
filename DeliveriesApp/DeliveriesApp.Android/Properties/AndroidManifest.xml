@@ -3,4 +3,5 @@
 	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="27" />
 	<application android:label="Deliveries"
 	             android:theme="@style/Theme.AppCompat.Light"></application>
+
 </manifest>

@@ -49,6 +49,7 @@ namespace DeliveriesApp.Droid
 
                 var intent = new Intent(this, typeof(DeliveriesApp.Droid.TabsActivity));
                 StartActivity(intent);
+                Finish();
             }
             else
             {
