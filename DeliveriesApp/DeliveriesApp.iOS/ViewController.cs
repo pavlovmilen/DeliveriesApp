@@ -7,6 +7,8 @@ namespace DeliveriesApp.iOS
 {
 	public partial class ViewController : UIViewController
 	{
+	    private bool _hasLoggedIn = false;
+
 		public ViewController (IntPtr handle) : base (handle)
 		{
 		}
@@ -24,7 +26,10 @@ namespace DeliveriesApp.iOS
 
             var alert = UIAlertController.Create(result? "Success":"Failure", result? "Wellcome": "Invaild email or password", UIAlertControllerStyle.Alert );
 
+            _hasLoggedIn = result;
             alert.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+
+            PerformSegue("LoginSegue", this);
 
             PresentViewController(alert, true, null);
         }
@@ -33,14 +38,19 @@ namespace DeliveriesApp.iOS
 	    {
             base.PrepareForSegue(segue, sender);
 
-	        if (segue.Identifier != "registerSegue")
-	            return;
-
-	        if (segue.DestinationViewController is RegisterViewController destinationViewController) 
-	            destinationViewController.EmailAddress = EmailTextField.Text;
+	        if (segue.Identifier == "registerSegue")
+	        {
+	            if (segue.DestinationViewController is RegisterViewController destinationViewController)
+	                destinationViewController.EmailAddress = EmailTextField.Text;
+	        }
 	    }
 
-        public override void DidReceiveMemoryWarning ()
+	    public override bool ShouldPerformSegue(string segueIdentifier, NSObject sender)
+	    {
+	        return segueIdentifier != "LoginSegue" || _hasLoggedIn;
+	    }
+
+	    public override void DidReceiveMemoryWarning ()
 		{
 			base.DidReceiveMemoryWarning ();
 			// Release any cached data, images, etc that aren't in use.
