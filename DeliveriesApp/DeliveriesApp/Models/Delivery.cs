@@ -23,9 +23,20 @@ namespace DeliveriesApp.Models
         /// </summary>
         public int Status { get; set; }
 
-        public static async Task<List<Delivery>> GetDeliveries()
+        public static async Task<List<Delivery>> GetActiveDeliveries()
         {
-            var deliveries = await AzureHelper.MobileService.GetTable<Delivery>().ToListAsync();
+            var deliveries = await AzureHelper.MobileService.GetTable<Delivery>()
+                .Where(d => d.Status != 2)
+                .ToListAsync();
+
+            return deliveries;
+        }
+
+        public static async Task<List<Delivery>> GetCompletedDeliveries()
+        {
+            var deliveries = await AzureHelper.MobileService.GetTable<Delivery>()
+                .Where(d => d.Status == 2)
+                .ToListAsync();
 
             return deliveries;
         }
@@ -35,6 +46,30 @@ namespace DeliveriesApp.Models
             var result = await AzureHelper.Insert(delivery);
 
             return result;
+        }
+
+        public string GetStatusForDelivery(int status)
+        {
+            string toReturn;
+            switch (status)
+            {
+                case 0:
+                    toReturn = "Waiting for delivery person.";
+                    break;
+                case 1:
+                    toReturn = "Out for delivery";
+                    break;
+                default:
+                    toReturn = "Delivered";
+                    break;
+            }
+
+            return toReturn;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} - {Status}";
         }
     }
 }

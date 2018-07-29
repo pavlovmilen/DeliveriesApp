@@ -146,6 +146,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoordinatesLabel.cs" />
+    <Compile Include="CoordinatesLabel.designer.cs">
+      <DependentUpon>CoordinatesLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveredCell.cs" />
+    <Compile Include="DeliveredCell.designer.cs">
+      <DependentUpon>DeliveredCell.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeliveredViewController.cs" />
     <Compile Include="DeliveredViewController.designer.cs">
       <DependentUpon>DeliveredViewController.cs</DependentUpon>
@@ -154,8 +162,28 @@
     <Compile Include="DeliveriesViewControlle.designer.cs">
       <DependentUpon>DeliveriesViewControlle.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeliveryCell.cs" />
+    <Compile Include="DeliveryCell.designer.cs">
+      <DependentUpon>DeliveryCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryItemCell.cs" />
+    <Compile Include="DeliveryItemCell.designer.cs">
+      <DependentUpon>DeliveryItemCell.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="MainTabBarController.cs" />
+    <Compile Include="MainTabBarController.designer.cs">
+      <DependentUpon>MainTabBarController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NameLabel.cs" />
+    <Compile Include="NameLabel.designer.cs">
+      <DependentUpon>NameLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewDeliveryViewController.cs" />
+    <Compile Include="NewDeliveryViewController.designer.cs">
+      <DependentUpon>NewDeliveryViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfileViewController.cs" />
     <Compile Include="ProfileViewController.designer.cs">
       <DependentUpon>ProfileViewController.cs</DependentUpon>
@@ -164,10 +192,41 @@
     <Compile Include="RegisterViewController.designer.cs">
       <DependentUpon>RegisterViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="StatusLabel.cs" />
+    <Compile Include="StatusLabel.designer.cs">
+      <DependentUpon>StatusLabel.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\delivered%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\delivered%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\delivered.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\deliveries%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\deliveries%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\deliveries.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

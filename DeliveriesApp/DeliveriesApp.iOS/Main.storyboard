@@ -169,7 +169,7 @@
         </scene>
         <scene sceneID="1799">
             <objects>
-                <tabBarController id="1800" sceneMemberID="viewController">
+                <tabBarController id="1800" sceneMemberID="viewController" customClass="MainTabBarController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="1803">
                         <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -180,10 +180,17 @@
                         <segue id="3260" destination="3110" kind="relationship" relationship="viewControllers"/>
                         <segue id="3409" destination="3265" kind="relationship" relationship="viewControllers"/>
                     </connections>
+                    <navigationItem id="4803" key="navigationItem">
+                        <barButtonItem key="rightBarButtonItem" id="4804" systemItem="add">
+                            <connections>
+                                <segue id="5469" destination="4754" kind="show"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1804" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="-8"/>
+            <point key="canvasLocation" x="658" y="-20"/>
         </scene>
         <scene sceneID="2946">
             <objects>
@@ -193,13 +200,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2951">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2951" reuseIdentifier="delivery" customClass="DeliveryItemCell" rowHeight="44">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2951" id="2952">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7389" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="16" y="-6" width="225" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <constraints>
+                                                <constraint id="10267" firstAttribute="width" constant="225"/>
+                                            </constraints>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7390" translatesAutoresizingMaskIntoConstraints="NO">
+                                            <rect key="frame" x="16" y="23.5" width="195" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <constraints>
+                                                <constraint id="10270" firstAttribute="width" constant="195"/>
+                                            </constraints>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7391" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                            <rect key="frame" x="260" y="0.0" width="99" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint id="7407" firstItem="7391" firstAttribute="top" secondItem="2952" secondAttribute="top"/>
+                                        <constraint id="7408" firstItem="2952" firstAttribute="trailing" secondItem="7391" secondAttribute="trailing" constant="16"/>
+                                        <constraint id="7410" firstItem="2952" firstAttribute="bottom" secondItem="7391" secondAttribute="bottom" constant="22"/>
+                                        <constraint id="10265" firstItem="7389" firstAttribute="leading" secondItem="2952" secondAttribute="leading" constant="16"/>
+                                        <constraint id="10266" firstItem="7389" firstAttribute="top" secondItem="2952" secondAttribute="top" constant="-6"/>
+                                        <constraint id="10268" firstItem="7390" firstAttribute="leading" secondItem="2952" secondAttribute="leading" constant="16"/>
+                                        <constraint id="10269" firstItem="2952" firstAttribute="bottom" secondItem="7390" secondAttribute="bottom" constant="4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="NameLabel" destination="7389" id="name-outlet-7389"/>
+                                    <outlet property="StatusLabel" destination="7390" id="name-outlet-7390"/>
+                                    <outlet property="CoordinatesLabel" destination="7391" id="name-outlet-7391"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -207,7 +254,7 @@
                             <outlet property="delegate" destination="2947" id="2950"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Deliveries" id="3104"/>
+                    <tabBarItem key="tabBarItem" title="Deliveries" id="3104" image="deliveries.png"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2953" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,13 +269,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3114">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3114" reuseIdentifier="delivered" customClass="DeliveredCell" rowHeight="44">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3114" id="3115">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7823" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="230" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7824" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                            <rect key="frame" x="1" y="19" width="206" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7825" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                            <rect key="frame" x="244" y="12" width="115" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="NameLabel" destination="7823" id="name-outlet-7823"/>
+                                    <outlet property="StatusLabel" destination="7824" id="name-outlet-7824"/>
+                                    <outlet property="CoordinatesLabel" destination="7825" id="name-outlet-7825"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -236,7 +311,7 @@
                             <outlet property="delegate" destination="3110" id="3113"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Delivered" id="3259"/>
+                    <tabBarItem key="tabBarItem" title="Delivered" id="3259" image="delivered.png"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3116" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -255,16 +330,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="3408"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="3408" image="profile.png"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3267" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1137" y="758"/>
         </scene>
+        <scene sceneID="4753">
+            <objects>
+                <viewController id="4754" sceneMemberID="viewController" customClass="NewDeliveryViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4751"/>
+                        <viewControllerLayoutGuide type="bottom" id="4752"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4755">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="5650" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Package name">
+                                <rect key="frame" x="16" y="76" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint id="5651" firstItem="5650" firstAttribute="leading" secondItem="4755" secondAttribute="leadingMargin"/>
+                            <constraint id="5652" firstItem="5650" firstAttribute="trailing" secondItem="4755" secondAttribute="trailingMargin"/>
+                            <constraint id="5653" firstItem="5650" firstAttribute="top" secondItem="4751" secondAttribute="bottom" constant="12"/>
+                        </constraints>
+                    </view>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem title="New Delivery" id="5602" key="navigationItem">
+                        <barButtonItem key="rightBarButtonItem" id="5603" systemItem="save"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="SaveBarButtonItem" destination="5603" id="name-outlet-5603"/>
+                        <outlet property="PackageNameTextField" destination="5650" id="name-outlet-5650"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4756" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="505" y="717"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
         <simulatedOrientationMetrics key="orientation"/>
     </simulatedMetricsContainer>
+    <resources>
+        <image name="delivered.png" width="30" height="30"/>
+        <image name="deliveries.png" width="30" height="30"/>
+        <image name="profile.png" width="30" height="30"/>
+    </resources>
 </document>
