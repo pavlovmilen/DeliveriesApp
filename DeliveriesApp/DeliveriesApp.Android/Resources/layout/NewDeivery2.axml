@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/sample_main_layout">
     <TextView
         android:text="New Delivery"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -29,5 +30,16 @@
         class="com.google.android.gms.maps.MapFragment"
         android:id="@+id/mapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="200dp" />
+    <TextView
+        android:text="Locate Package Destination"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3" />
+    <fragment
+        class="com.google.android.gms.maps.MapFragment"
+        android:id="@+id/destinationMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
 </LinearLayout>
