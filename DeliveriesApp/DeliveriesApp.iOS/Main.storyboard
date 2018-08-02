@@ -354,12 +354,56 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="11015" firstAttribute="width" constant="343"/>
+                                </constraints>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10632" translatesAutoresizingMaskIntoConstraints="NO" text="Select the origin location">
+                                <rect key="frame" x="16" y="114" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="10636" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="16" y="142.5" width="343" height="170.5"/>
+                            </mapView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="10637" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="16" y="388.5" width="343" height="170.5"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the destination location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10638" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="16" y="321" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint id="5651" firstItem="5650" firstAttribute="leading" secondItem="4755" secondAttribute="leadingMargin"/>
-                            <constraint id="5652" firstItem="5650" firstAttribute="trailing" secondItem="4755" secondAttribute="trailingMargin"/>
-                            <constraint id="5653" firstItem="5650" firstAttribute="top" secondItem="4751" secondAttribute="bottom" constant="12"/>
+                            <constraint id="10649" firstItem="4755" firstAttribute="trailing" secondItem="10636" secondAttribute="trailing" constant="16"/>
+                            <constraint id="10826" firstItem="10636" firstAttribute="trailing" secondItem="10638" secondAttribute="trailing"/>
+                            <constraint id="10827" firstItem="10636" firstAttribute="leading" secondItem="10638" secondAttribute="leading"/>
+                            <constraint id="10828" firstItem="10638" firstAttribute="top" secondItem="10636" secondAttribute="bottom" constant="8"/>
+                            <constraint id="10829" firstItem="10638" firstAttribute="trailing" secondItem="4755" secondAttribute="trailingMargin"/>
+                            <constraint id="10830" firstItem="10638" firstAttribute="leading" secondItem="4755" secondAttribute="leadingMargin"/>
+                            <constraint id="10831" firstItem="4755" firstAttribute="centerY" secondItem="10638" secondAttribute="centerY" constant="2.5"/>
+                            <constraint id="10836" firstItem="4755" firstAttribute="trailing" secondItem="10637" secondAttribute="trailing" constant="16"/>
+                            <constraint id="10840" firstItem="10637" firstAttribute="trailing" secondItem="4755" secondAttribute="trailingMargin"/>
+                            <constraint id="10841" firstItem="10637" firstAttribute="leading" secondItem="4755" secondAttribute="leadingMargin"/>
+                            <constraint id="10842" firstItem="10637" firstAttribute="top" secondItem="10638" secondAttribute="bottom" constant="47"/>
+                            <constraint id="11013" firstItem="4755" firstAttribute="trailing" secondItem="5650" secondAttribute="trailing" constant="16"/>
+                            <constraint id="11014" firstItem="5650" firstAttribute="top" secondItem="4755" secondAttribute="top" constant="76"/>
+                            <constraint id="11016" firstItem="4755" firstAttribute="trailing" secondItem="10632" secondAttribute="trailing" constant="16"/>
+                            <constraint id="11020" firstItem="10632" firstAttribute="top" secondItem="5650" secondAttribute="bottom" constant="8"/>
+                            <constraint id="11021" firstItem="10632" firstAttribute="leading" secondItem="10636" secondAttribute="leading"/>
+                            <constraint id="11106" firstItem="10638" firstAttribute="top" secondItem="10636" secondAttribute="bottom" constant="8"/>
+                            <constraint id="11107" firstItem="10636" firstAttribute="leading" secondItem="10638" secondAttribute="leading"/>
+                            <constraint id="11108" firstItem="10636" firstAttribute="trailing" secondItem="4755" secondAttribute="trailingMargin"/>
+                            <constraint id="11109" firstItem="10638" firstAttribute="height" secondItem="10632" secondAttribute="height"/>
+                            <constraint id="11110" firstItem="10638" firstAttribute="top" secondItem="10636" secondAttribute="bottom" constant="8"/>
+                            <constraint id="11111" firstItem="10636" firstAttribute="top" secondItem="10632" secondAttribute="bottom" constant="8"/>
+                            <constraint id="11112" firstItem="10636" firstAttribute="trailing" secondItem="10638" secondAttribute="trailing"/>
+                            <constraint id="11113" firstItem="10636" firstAttribute="leading" secondItem="10638" secondAttribute="leading"/>
+                            <constraint id="11297" firstItem="4752" firstAttribute="top" secondItem="10637" secondAttribute="bottom" constant="64"/>
+                            <constraint id="11480" firstItem="10636" firstAttribute="trailing" secondItem="4755" secondAttribute="trailingMargin"/>
                         </constraints>
                     </view>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -369,6 +413,8 @@
                     <connections>
                         <outlet property="SaveBarButtonItem" destination="5603" id="name-outlet-5603"/>
                         <outlet property="PackageNameTextField" destination="5650" id="name-outlet-5650"/>
+                        <outlet property="SourceMapView" destination="10636" id="name-outlet-10636"/>
+                        <outlet property="DestinationMapView" destination="10637" id="name-outlet-10637"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4756" userLabel="First Responder" sceneMemberID="firstResponder"/>

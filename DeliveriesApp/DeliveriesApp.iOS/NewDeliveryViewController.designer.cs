@@ -16,14 +16,27 @@ namespace DeliveriesApp.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        MapKit.MKMapView DestinationMapView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField PackageNameTextField { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIBarButtonItem SaveBarButtonItem { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        MapKit.MKMapView SourceMapView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (DestinationMapView != null) {
+                DestinationMapView.Dispose ();
+                DestinationMapView = null;
+            }
+
             if (PackageNameTextField != null) {
                 PackageNameTextField.Dispose ();
                 PackageNameTextField = null;
@@ -32,6 +45,11 @@ namespace DeliveriesApp.iOS
             if (SaveBarButtonItem != null) {
                 SaveBarButtonItem.Dispose ();
                 SaveBarButtonItem = null;
+            }
+
+            if (SourceMapView != null) {
+                SourceMapView.Dispose ();
+                SourceMapView = null;
             }
         }
     }
