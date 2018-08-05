@@ -56,11 +56,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeliverActivity.cs" />
+    <Compile Include="Fragments\DeliveredFragment.cs" />
+    <Compile Include="Fragments\DeliveringFragment.cs" />
+    <Compile Include="Fragments\WaitingFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PickUpActivity.cs" />
     <Compile Include="RegisterActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabsActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
