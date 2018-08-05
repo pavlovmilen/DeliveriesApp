@@ -63,10 +63,16 @@ namespace DeliveriesApp.iOS
 
         private async void SaveBarButtonItem_Clicked(object sender, EventArgs e)
         {
+            var origin = SourceMapView.CenterCoordinate;
+            var destination = DestinationMapView.CenterCoordinate;
             var delivery = new Delivery
             {
                 Name = PackageNameTextField.Text,
-                Status = 0
+                Status = 0,
+                OriginLatitude = origin.Latitude,
+                OriginLongitude = origin.Longitude,
+                DestinationLatitude = destination.Latitude,
+                DestinationLongitude = destination.Longitude
             };
 
             await Delivery.InsertDelivery(delivery);
