@@ -11,8 +11,8 @@ using UIKit;
 
 namespace DeliveryPersonApp.iOS
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register ("DeliverTableViewController")]
+    partial class DeliverTableViewController
     {
         void ReleaseDesignerOutlets ()
         {

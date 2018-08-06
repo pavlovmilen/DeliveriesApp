@@ -121,11 +121,35 @@
     <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeliveredTableViewController.cs" />
+    <Compile Include="DeliveredTableViewController.designer.cs">
+      <DependentUpon>DeliveredTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeliverTableViewController.cs" />
+    <Compile Include="DeliverTableViewController.designer.cs">
+      <DependentUpon>DeliverTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeliverViewController.cs" />
+    <Compile Include="DeliverViewController.designer.cs">
+      <DependentUpon>DeliverViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="MainTabBarViewController.cs" />
+    <Compile Include="MainTabBarViewController.designer.cs">
+      <DependentUpon>MainTabBarViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterViewController.cs" />
+    <Compile Include="RegisterViewController.designer.cs">
+      <DependentUpon>RegisterViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitingTableViewController.cs" />
+    <Compile Include="WaitingTableViewController.designer.cs">
+      <DependentUpon>WaitingTableViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
