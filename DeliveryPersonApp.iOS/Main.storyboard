@@ -23,7 +23,7 @@
         </scene>
         <scene sceneID="241">
             <objects>
-                <viewController id="242" sceneMemberID="viewController">
+                <viewController id="242" sceneMemberID="viewController" customClass="LoginViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="239"/>
                         <viewControllerLayoutGuide type="bottom" id="240"/>
@@ -32,8 +32,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1226" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Username">
+                                <rect key="frame" x="20" y="134" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1227" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Password">
+                                <rect key="frame" x="20" y="172" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="password" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1228" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="164" y="353" width="87" height="30"/>
+                                <state key="normal" title="Log In"/>
+                                <constraints>
+                                    <constraint id="1240" firstItem="1228" firstAttribute="width" constant="87"/>
+                                </constraints>
+                                <connections>
+                                    <segue id="1344" destination="476" kind="show" identifier="LoginSegue"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1229" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="164" y="402" width="87" height="30"/>
+                                <state key="normal" title="Register"/>
+                                <constraints>
+                                    <constraint id="1245" firstAttribute="width" constant="87"/>
+                                </constraints>
+                                <connections>
+                                    <segue id="1286" destination="455" kind="show" identifier="RegisterSegue"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="1230" firstItem="1226" firstAttribute="trailing" secondItem="243" secondAttribute="trailingMargin"/>
+                            <constraint id="1231" firstItem="1226" firstAttribute="leading" secondItem="243" secondAttribute="leadingMargin"/>
+                            <constraint id="1232" firstItem="1226" firstAttribute="top" secondItem="239" secondAttribute="bottom" constant="70"/>
+                            <constraint id="1233" firstItem="1227" firstAttribute="top" secondItem="1226" secondAttribute="bottom" constant="8"/>
+                            <constraint id="1234" firstItem="1227" firstAttribute="trailing" secondItem="243" secondAttribute="trailingMargin"/>
+                            <constraint id="1235" firstItem="1227" firstAttribute="leading" secondItem="243" secondAttribute="leadingMargin"/>
+                            <constraint id="1236" firstItem="1228" firstAttribute="centerY" secondItem="243" secondAttribute="centerY"/>
+                            <constraint id="1237" firstItem="1228" firstAttribute="centerX" secondItem="243" secondAttribute="centerX"/>
+                            <constraint id="1242" firstItem="1229" firstAttribute="width" secondItem="1228" secondAttribute="width"/>
+                            <constraint id="1243" firstItem="243" firstAttribute="trailing" secondItem="1229" secondAttribute="trailing" constant="163"/>
+                            <constraint id="1244" firstItem="243" firstAttribute="bottom" secondItem="1229" secondAttribute="bottom" constant="304"/>
+                        </constraints>
                     </view>
                     <navigationItem title="Title" id="297" key="navigationItem"/>
+                    <connections>
+                        <outlet property="UsernameTextField" destination="1226" id="name-outlet-1226"/>
+                        <outlet property="PasswordTextField" destination="1227" id="name-outlet-1227"/>
+                        <outlet property="LoginButton" destination="1228" id="name-outlet-1228"/>
+                        <outlet property="RegisterButton" destination="1229" id="name-outlet-1229"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="244" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,7 +103,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1346" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Username">
+                                <rect key="frame" x="20" y="127" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1347" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Password">
+                                <rect key="frame" x="20" y="182" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1348" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Confirm password">
+                                <rect key="frame" x="20" y="235" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1349" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="158" y="353" width="99" height="30"/>
+                                <state key="normal" title="Register"/>
+                                <constraints>
+                                    <constraint id="1424" firstItem="1349" firstAttribute="width" constant="99"/>
+                                </constraints>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="1413" firstItem="1346" firstAttribute="top" secondItem="452" secondAttribute="bottom" constant="63"/>
+                            <constraint id="1414" firstItem="1346" firstAttribute="trailing" secondItem="456" secondAttribute="trailingMargin"/>
+                            <constraint id="1415" firstItem="1346" firstAttribute="leading" secondItem="456" secondAttribute="leadingMargin"/>
+                            <constraint id="1416" firstItem="1347" firstAttribute="trailing" secondItem="456" secondAttribute="trailingMargin"/>
+                            <constraint id="1417" firstItem="1347" firstAttribute="leading" secondItem="456" secondAttribute="leadingMargin"/>
+                            <constraint id="1418" firstItem="1347" firstAttribute="top" secondItem="1346" secondAttribute="bottom" constant="25"/>
+                            <constraint id="1419" firstItem="1348" firstAttribute="trailing" secondItem="456" secondAttribute="trailingMargin"/>
+                            <constraint id="1420" firstItem="1348" firstAttribute="leading" secondItem="456" secondAttribute="leadingMargin"/>
+                            <constraint id="1421" firstItem="1348" firstAttribute="top" secondItem="1347" secondAttribute="bottom" constant="23"/>
+                            <constraint id="1422" firstItem="1349" firstAttribute="centerY" secondItem="456" secondAttribute="centerY"/>
+                            <constraint id="1423" firstItem="1349" firstAttribute="centerX" secondItem="456" secondAttribute="centerX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="UsenameTextField" destination="1346" id="name-outlet-1346"/>
+                        <outlet property="PasswordTextField" destination="1347" id="name-outlet-1347"/>
+                        <outlet property="ConfirmPasswordTextField" destination="1348" id="name-outlet-1348"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="457" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,7 +261,7 @@
         </scene>
         <scene sceneID="1184">
             <objects>
-                <viewController id="1185" sceneMemberID="viewController" customClass="RegisterViewController">
+                <viewController id="1185" sceneMemberID="viewController" customClass="PickUpViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1182"/>
                         <viewControllerLayoutGuide type="bottom" id="1183"/>

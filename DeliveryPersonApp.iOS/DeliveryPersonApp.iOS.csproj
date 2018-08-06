@@ -133,11 +133,19 @@
     <Compile Include="DeliverViewController.designer.cs">
       <DependentUpon>DeliverViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginViewController.cs" />
+    <Compile Include="LoginViewController.designer.cs">
+      <DependentUpon>LoginViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="MainTabBarViewController.cs" />
     <Compile Include="MainTabBarViewController.designer.cs">
       <DependentUpon>MainTabBarViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PickUpViewController.cs" />
+    <Compile Include="PickUpViewController.designer.cs">
+      <DependentUpon>PickUpViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="RegisterViewController.cs" />
     <Compile Include="RegisterViewController.designer.cs">

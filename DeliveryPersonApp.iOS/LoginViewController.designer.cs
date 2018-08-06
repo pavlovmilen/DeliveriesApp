@@ -11,12 +11,12 @@ using UIKit;
 
 namespace DeliveryPersonApp.iOS
 {
-    [Register ("RegisterViewController")]
-    partial class RegisterViewController
+    [Register ("LoginViewController")]
+    partial class LoginViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField ConfirmPasswordTextField { get; set; }
+        UIKit.UIButton LoginButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -24,13 +24,17 @@ namespace DeliveryPersonApp.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField UsenameTextField { get; set; }
+        UIKit.UIButton RegisterButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField UsernameTextField { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (ConfirmPasswordTextField != null) {
-                ConfirmPasswordTextField.Dispose ();
-                ConfirmPasswordTextField = null;
+            if (LoginButton != null) {
+                LoginButton.Dispose ();
+                LoginButton = null;
             }
 
             if (PasswordTextField != null) {
@@ -38,9 +42,14 @@ namespace DeliveryPersonApp.iOS
                 PasswordTextField = null;
             }
 
-            if (UsenameTextField != null) {
-                UsenameTextField.Dispose ();
-                UsenameTextField = null;
+            if (RegisterButton != null) {
+                RegisterButton.Dispose ();
+                RegisterButton = null;
+            }
+
+            if (UsernameTextField != null) {
+                UsernameTextField.Dispose ();
+                UsernameTextField = null;
             }
         }
     }
