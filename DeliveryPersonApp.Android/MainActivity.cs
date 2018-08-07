@@ -8,12 +8,20 @@ namespace DeliveryPersonApp.Android
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        private EditText _emailEditText, _passwordEditText;
+        private Button _loginButton, _registerButton;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.Main);
+
+            _emailEditText = FindViewById<EditText>(Resource.Id.emailEditText);
+            _passwordEditText = FindViewById<EditText>(Resource.Id.passwordEditText);
+            _loginButton = FindViewById<Button>(Resource.Id.loginButton);
+            _registerButton = FindViewById<Button>(Resource.Id.registerButton);
         }
     }
 }

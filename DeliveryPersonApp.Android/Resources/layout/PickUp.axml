@@ -3,5 +3,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <fragment
+        class="com.google.android.gms.map.MapFragment"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/pickUpMapFragment" />
 </LinearLayout>
