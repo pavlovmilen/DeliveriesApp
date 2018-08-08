@@ -1,10 +1,11 @@
-﻿using Android.App;
+﻿using Android.AccessibilityServices;
+using Android.App;
 using Android.OS;
 using Android.Views;
 
 namespace DeliveryPersonApp.Android.Fragments
 {
-    public class DeliveredFragment : ListFragment
+    public class DeliveredFragment : global :: Android.Support.V4.App.ListFragment
     {
         public override void OnCreate(Bundle savedInstanceState)
         {

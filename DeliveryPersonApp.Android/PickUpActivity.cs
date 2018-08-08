@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Gms.Maps;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -9,6 +10,8 @@ namespace DeliveryPersonApp.Android
     [Activity(Label = "PickUpActivity")]
     public class PickUpActivity : Activity
     {
+        private MapFragment _mapFragment;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -16,6 +19,8 @@ namespace DeliveryPersonApp.Android
             // Create your application here
 
             SetContentView(Resource.Layout.PickUp);
+
+            _mapFragment = FragmentManager.FindFragmentById<MapFragment>(Resource.Id.pickUpMapFragment);
         }
     }
 }

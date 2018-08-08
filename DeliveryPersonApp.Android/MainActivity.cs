@@ -22,6 +22,19 @@ namespace DeliveryPersonApp.Android
             _passwordEditText = FindViewById<EditText>(Resource.Id.passwordEditText);
             _loginButton = FindViewById<Button>(Resource.Id.loginButton);
             _registerButton = FindViewById<Button>(Resource.Id.registerButton);
+
+            _loginButton.Click += LoginButton_Click;
+            _registerButton.Click += RegisterButton_Click;
+        }
+
+        private void RegisterButton_Click(object sender, System.EventArgs e)
+        {
+            StartActivity(typeof(RegisterActivity));
+        }
+
+        private void LoginButton_Click(object sender, System.EventArgs e)
+        {
+            StartActivity(typeof(TabsActivity));
         }
     }
 }
