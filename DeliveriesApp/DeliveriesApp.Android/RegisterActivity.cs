@@ -2,6 +2,7 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using DeliveriesApp.Models;
 
 namespace DeliveriesApp.Droid
 {
@@ -31,7 +32,7 @@ namespace DeliveriesApp.Droid
 
         private async void RegisterUser_Click(object sender, EventArgs e)
         {
-            var result = await AzureHelper.Register(_emailEditText.Text, _passwordEditText.Text,
+            var result = await Delivery.Register(_emailEditText.Text, _passwordEditText.Text,
                 _confirmPasswordEditText.Text);
 
             if(result)

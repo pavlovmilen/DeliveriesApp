@@ -22,7 +22,7 @@ namespace DeliveriesApp.iOS
 
         private async void SignInButton_TouchUpInside(object sender, EventArgs e)
         {
-            var result = await AzureHelper.Login(EmailTextField.Text, PasswordTextField.Text);
+            var result = await User.Login(EmailTextField.Text, PasswordTextField.Text);
 
             var alert = UIAlertController.Create(result? "Success":"Failure", result? "Wellcome": "Invaild email or password", UIAlertControllerStyle.Alert );
 

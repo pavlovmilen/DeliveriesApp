@@ -1,4 +1,5 @@
 ﻿using System;
+using DeliveriesApp.Models;
 using UIKit;
 
 namespace DeliveriesApp.iOS
@@ -21,7 +22,7 @@ namespace DeliveriesApp.iOS
 
         private async void RegisterButton_TouchUpInside(object sender, EventArgs e)
         {
-            var result = await AzureHelper.Register(EmailTextfield.Text, PasswordTextField.Text,
+            var result = await Delivery.Register(EmailTextfield.Text, PasswordTextField.Text,
                 ConfirmPasswordTextField.Text);
     
             var alert = UIAlertController.Create(result ? "Success" : "Failure", result ? "User inserted" : "Could not register", UIAlertControllerStyle.Alert);

@@ -41,7 +41,7 @@ namespace DeliveriesApp.Droid
 
         private async void SigninButton_Click(object sender, EventArgs e)
         {
-            var result = await AzureHelper.Login(_emailEditText.Text, _passwordEditText.Text);
+            var result = await User.Login(_emailEditText.Text, _passwordEditText.Text);
 
             if (result)
             {
