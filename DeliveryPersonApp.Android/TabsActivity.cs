@@ -9,6 +9,8 @@ namespace DeliveryPersonApp.Android
     [Activity(Label = "TabsActivity")]
     public class TabsActivity : FragmentActivity
     {
+        public string UserId { get; set; }
+
         private TabLayout _tabLayout;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -16,6 +18,8 @@ namespace DeliveryPersonApp.Android
 
             // Create your application here
             SetContentView(Resource.Layout.Tabs);
+
+            UserId = Intent.GetStringExtra("userId");
 
             _tabLayout = FindViewById<TabLayout>(Resource.Id.mainTabLayout);
             _tabLayout.TabSelected += TabLayout_TabSelected;

@@ -3,8 +3,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <Button
+        android:text="Delivered"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/deliverButton" />
     <fragment
-        class="com.google.android.gms.map.MapFragment"
+        class="com.google.android.gms.maps.MapFragment"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:id="@+id/deliverMapFragment" />

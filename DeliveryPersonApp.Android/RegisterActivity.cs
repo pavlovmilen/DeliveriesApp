@@ -2,6 +2,7 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using DeliveriesApp.Models;
 
 namespace DeliveryPersonApp.Android
 {
@@ -26,9 +27,14 @@ namespace DeliveryPersonApp.Android
             _registerViewButton.Click += RegisterViewButton_Click;
         }
 
-        private void RegisterViewButton_Click(object sender, EventArgs e)
+        private async void RegisterViewButton_Click(object sender, EventArgs e)
         {
-            
+            var success = await DeliveryPerson.Register(_emailRegisterEditText.Text, _passwordRegisterEditText.Text, _confirmPasswordRegisterEditText.Text);
+
+            if (success)
+                Toast.MakeText(this, "Success", ToastLength.Long).Show();
+            else
+                Toast.MakeText(this, "Failure", ToastLength.Long).Show();
         }
     }
 }

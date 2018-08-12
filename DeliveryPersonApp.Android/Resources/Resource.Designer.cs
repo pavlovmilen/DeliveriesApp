@@ -26,6 +26,16 @@ namespace DeliveryPersonApp.Android
 		
 		public static void UpdateIdValues()
 		{
+			global::Xamarin.Auth._MobileServices.Resource.Animation.slide_in_right = global::DeliveryPersonApp.Android.Resource.Animation.slide_in_right;
+			global::Xamarin.Auth._MobileServices.Resource.Animation.slide_out_left = global::DeliveryPersonApp.Android.Resource.Animation.slide_out_left;
+			global::Xamarin.Auth._MobileServices.Resource.Drawable.ic_arrow_back = global::DeliveryPersonApp.Android.Resource.Drawable.ic_arrow_back;
+			global::Xamarin.Auth._MobileServices.Resource.Id.webview = global::DeliveryPersonApp.Android.Resource.Id.webview;
+			global::Xamarin.Auth._MobileServices.Resource.Layout.activity_webview = global::DeliveryPersonApp.Android.Resource.Layout.activity_webview;
+			global::Xamarin.Auth._MobileServices.Resource.String.ApplicationName = global::DeliveryPersonApp.Android.Resource.String.ApplicationName;
+			global::Xamarin.Auth._MobileServices.Resource.String.Hello = global::DeliveryPersonApp.Android.Resource.String.Hello;
+			global::Xamarin.Auth._MobileServices.Resource.String.title_activity_webview = global::DeliveryPersonApp.Android.Resource.String.title_activity_webview;
+			global::PCLCrypto.Resource.String.ApplicationName = global::DeliveryPersonApp.Android.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::DeliveryPersonApp.Android.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -74,10 +84,16 @@ namespace DeliveryPersonApp.Android
 			public const int design_snackbar_out = 2131034125;
 			
 			// aapt resource value: 0x7f05000e
-			public const int tooltip_enter = 2131034126;
+			public const int slide_in_right = 2131034126;
 			
 			// aapt resource value: 0x7f05000f
-			public const int tooltip_exit = 2131034127;
+			public const int slide_out_left = 2131034127;
+			
+			// aapt resource value: 0x7f050010
+			public const int tooltip_enter = 2131034128;
+			
+			// aapt resource value: 0x7f050011
+			public const int tooltip_exit = 2131034129;
 			
 			static Animation()
 			{
@@ -2347,26 +2363,26 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f02007f
-			public const int avd_hide_password_1 = 2130837631;
-			
 			// aapt resource value: 0x7f020080
-			public const int avd_hide_password_2 = 2130837632;
+			public const int avd_hide_password_1 = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int avd_hide_password_3 = 2130837633;
+			public const int avd_hide_password_2 = 2130837633;
+			
+			// aapt resource value: 0x7f020082
+			public const int avd_hide_password_3 = 2130837634;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020082
-			public const int avd_show_password_1 = 2130837634;
-			
 			// aapt resource value: 0x7f020083
-			public const int avd_show_password_2 = 2130837635;
+			public const int avd_show_password_1 = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int avd_show_password_3 = 2130837636;
+			public const int avd_show_password_2 = 2130837636;
+			
+			// aapt resource value: 0x7f020085
+			public const int avd_show_password_3 = 2130837637;
 			
 			// aapt resource value: 0x7f020055
 			public const int common_full_open_on_phone = 2130837589;
@@ -2450,49 +2466,52 @@ namespace DeliveryPersonApp.Android
 			public const int googleg_standard_color_18 = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int navigation_empty_icon = 2130837616;
+			public const int ic_arrow_back = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int notification_action_background = 2130837617;
+			public const int navigation_empty_icon = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int notification_bg = 2130837618;
+			public const int notification_action_background = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int notification_bg_low = 2130837619;
+			public const int notification_bg = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int notification_bg_low_normal = 2130837620;
+			public const int notification_bg_low = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int notification_bg_low_pressed = 2130837621;
+			public const int notification_bg_low_normal = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int notification_bg_normal = 2130837622;
+			public const int notification_bg_low_pressed = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int notification_bg_normal_pressed = 2130837623;
+			public const int notification_bg_normal = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int notification_icon_background = 2130837624;
-			
-			// aapt resource value: 0x7f02007d
-			public const int notification_template_icon_bg = 2130837629;
-			
-			// aapt resource value: 0x7f02007e
-			public const int notification_template_icon_low_bg = 2130837630;
+			public const int notification_bg_normal_pressed = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int notification_tile_bg = 2130837625;
+			public const int notification_icon_background = 2130837625;
+			
+			// aapt resource value: 0x7f02007e
+			public const int notification_template_icon_bg = 2130837630;
+			
+			// aapt resource value: 0x7f02007f
+			public const int notification_template_icon_low_bg = 2130837631;
 			
 			// aapt resource value: 0x7f02007a
-			public const int notify_panel_notification_icon_bg = 2130837626;
+			public const int notification_tile_bg = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int tooltip_frame_dark = 2130837627;
+			public const int notify_panel_notification_icon_bg = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int tooltip_frame_light = 2130837628;
+			public const int tooltip_frame_dark = 2130837628;
+			
+			// aapt resource value: 0x7f02007d
+			public const int tooltip_frame_light = 2130837629;
 			
 			static Drawable()
 			{
@@ -2525,8 +2544,8 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0042
 			public const int SYM = 2131427394;
 			
-			// aapt resource value: 0x7f0b00ab
-			public const int action0 = 2131427499;
+			// aapt resource value: 0x7f0b00ad
+			public const int action0 = 2131427501;
 			
 			// aapt resource value: 0x7f0b0086
 			public const int action_bar = 2131427462;
@@ -2549,17 +2568,17 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0064
 			public const int action_bar_title = 2131427428;
 			
-			// aapt resource value: 0x7f0b00a8
-			public const int action_container = 2131427496;
+			// aapt resource value: 0x7f0b00aa
+			public const int action_container = 2131427498;
 			
 			// aapt resource value: 0x7f0b0087
 			public const int action_context_bar = 2131427463;
 			
-			// aapt resource value: 0x7f0b00af
-			public const int action_divider = 2131427503;
+			// aapt resource value: 0x7f0b00b1
+			public const int action_divider = 2131427505;
 			
-			// aapt resource value: 0x7f0b00a9
-			public const int action_image = 2131427497;
+			// aapt resource value: 0x7f0b00ab
+			public const int action_image = 2131427499;
 			
 			// aapt resource value: 0x7f0b0003
 			public const int action_menu_divider = 2131427331;
@@ -2576,11 +2595,11 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0066
 			public const int action_mode_close_button = 2131427430;
 			
-			// aapt resource value: 0x7f0b00aa
-			public const int action_text = 2131427498;
+			// aapt resource value: 0x7f0b00ac
+			public const int action_text = 2131427500;
 			
-			// aapt resource value: 0x7f0b00b8
-			public const int actions = 2131427512;
+			// aapt resource value: 0x7f0b00ba
+			public const int actions = 2131427514;
 			
 			// aapt resource value: 0x7f0b0067
 			public const int activity_chooser_view_content = 2131427431;
@@ -2621,8 +2640,8 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b006d
 			public const int buttonPanel = 2131427437;
 			
-			// aapt resource value: 0x7f0b00ac
-			public const int cancel_action = 2131427500;
+			// aapt resource value: 0x7f0b00ae
+			public const int cancel_action = 2131427502;
 			
 			// aapt resource value: 0x7f0b004f
 			public const int center = 2131427407;
@@ -2636,8 +2655,8 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b007d
 			public const int checkbox = 2131427453;
 			
-			// aapt resource value: 0x7f0b00b4
-			public const int chronometer = 2131427508;
+			// aapt resource value: 0x7f0b00b6
+			public const int chronometer = 2131427510;
 			
 			// aapt resource value: 0x7f0b0058
 			public const int clip_horizontal = 2131427416;
@@ -2648,20 +2667,20 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0044
 			public const int collapseActionView = 2131427396;
 			
-			// aapt resource value: 0x7f0b00be
-			public const int confirmRegisterPasswordEeditText = 2131427518;
-			
-			// aapt resource value: 0x7f0b0098
-			public const int container = 2131427480;
-			
 			// aapt resource value: 0x7f0b00c1
-			public const int contentFrame = 2131427521;
+			public const int confirmRegisterPasswordEeditText = 2131427521;
+			
+			// aapt resource value: 0x7f0b009a
+			public const int container = 2131427482;
+			
+			// aapt resource value: 0x7f0b00c4
+			public const int contentFrame = 2131427524;
 			
 			// aapt resource value: 0x7f0b0070
 			public const int contentPanel = 2131427440;
 			
-			// aapt resource value: 0x7f0b0099
-			public const int coordinator = 2131427481;
+			// aapt resource value: 0x7f0b009b
+			public const int coordinator = 2131427483;
 			
 			// aapt resource value: 0x7f0b0077
 			public const int custom = 2131427447;
@@ -2678,23 +2697,26 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b006a
 			public const int default_activity_button = 2131427434;
 			
-			// aapt resource value: 0x7f0b0095
-			public const int deliverMapFragment = 2131427477;
+			// aapt resource value: 0x7f0b0096
+			public const int deliverButton = 2131427478;
 			
-			// aapt resource value: 0x7f0b009b
-			public const int design_bottom_sheet = 2131427483;
+			// aapt resource value: 0x7f0b0097
+			public const int deliverMapFragment = 2131427479;
+			
+			// aapt resource value: 0x7f0b009d
+			public const int design_bottom_sheet = 2131427485;
+			
+			// aapt resource value: 0x7f0b00a4
+			public const int design_menu_item_action_area = 2131427492;
+			
+			// aapt resource value: 0x7f0b00a3
+			public const int design_menu_item_action_area_stub = 2131427491;
 			
 			// aapt resource value: 0x7f0b00a2
-			public const int design_menu_item_action_area = 2131427490;
+			public const int design_menu_item_text = 2131427490;
 			
 			// aapt resource value: 0x7f0b00a1
-			public const int design_menu_item_action_area_stub = 2131427489;
-			
-			// aapt resource value: 0x7f0b00a0
-			public const int design_menu_item_text = 2131427488;
-			
-			// aapt resource value: 0x7f0b009f
-			public const int design_navigation_view = 2131427487;
+			public const int design_navigation_view = 2131427489;
 			
 			// aapt resource value: 0x7f0b002c
 			public const int disableHome = 2131427372;
@@ -2702,17 +2724,17 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0088
 			public const int edit_query = 2131427464;
 			
-			// aapt resource value: 0x7f0b00a4
-			public const int emailEditText = 2131427492;
+			// aapt resource value: 0x7f0b00a6
+			public const int emailEditText = 2131427494;
 			
-			// aapt resource value: 0x7f0b00bc
-			public const int emailRegisterEditText = 2131427516;
+			// aapt resource value: 0x7f0b00bf
+			public const int emailRegisterEditText = 2131427519;
 			
 			// aapt resource value: 0x7f0b003b
 			public const int end = 2131427387;
 			
-			// aapt resource value: 0x7f0b00ba
-			public const int end_padder = 2131427514;
+			// aapt resource value: 0x7f0b00bc
+			public const int end_padder = 2131427516;
 			
 			// aapt resource value: 0x7f0b004a
 			public const int enterAlways = 2131427402;
@@ -2759,8 +2781,8 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b006c
 			public const int icon = 2131427436;
 			
-			// aapt resource value: 0x7f0b00b9
-			public const int icon_group = 2131427513;
+			// aapt resource value: 0x7f0b00bb
+			public const int icon_group = 2131427515;
 			
 			// aapt resource value: 0x7f0b0024
 			public const int icon_only = 2131427364;
@@ -2771,8 +2793,8 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0069
 			public const int image = 2131427433;
 			
-			// aapt resource value: 0x7f0b00b5
-			public const int info = 2131427509;
+			// aapt resource value: 0x7f0b00b7
+			public const int info = 2131427511;
 			
 			// aapt resource value: 0x7f0b0063
 			public const int italic = 2131427427;
@@ -2780,8 +2802,8 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0000
 			public const int item_touch_helper_previous_elevation = 2131427328;
 			
-			// aapt resource value: 0x7f0b0097
-			public const int largeLabel = 2131427479;
+			// aapt resource value: 0x7f0b0099
+			public const int largeLabel = 2131427481;
 			
 			// aapt resource value: 0x7f0b0053
 			public const int left = 2131427411;
@@ -2801,20 +2823,20 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b006b
 			public const int list_item = 2131427435;
 			
-			// aapt resource value: 0x7f0b00a6
-			public const int loginButton = 2131427494;
+			// aapt resource value: 0x7f0b00a8
+			public const int loginButton = 2131427496;
 			
-			// aapt resource value: 0x7f0b00c0
-			public const int mainTabLayout = 2131427520;
+			// aapt resource value: 0x7f0b00c3
+			public const int mainTabLayout = 2131427523;
 			
-			// aapt resource value: 0x7f0b00c4
-			public const int masked = 2131427524;
+			// aapt resource value: 0x7f0b00c7
+			public const int masked = 2131427527;
 			
-			// aapt resource value: 0x7f0b00ae
-			public const int media_actions = 2131427502;
+			// aapt resource value: 0x7f0b00b0
+			public const int media_actions = 2131427504;
 			
-			// aapt resource value: 0x7f0b00c2
-			public const int message = 2131427522;
+			// aapt resource value: 0x7f0b00c5
+			public const int message = 2131427525;
 			
 			// aapt resource value: 0x7f0b003c
 			public const int middle = 2131427388;
@@ -2825,8 +2847,8 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0033
 			public const int multiply = 2131427379;
 			
-			// aapt resource value: 0x7f0b009e
-			public const int navigation_header_container = 2131427486;
+			// aapt resource value: 0x7f0b00a0
+			public const int navigation_header_container = 2131427488;
 			
 			// aapt resource value: 0x7f0b0046
 			public const int never = 2131427398;
@@ -2837,14 +2859,14 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b001f
 			public const int normal = 2131427359;
 			
-			// aapt resource value: 0x7f0b00b7
-			public const int notification_background = 2131427511;
+			// aapt resource value: 0x7f0b00b9
+			public const int notification_background = 2131427513;
 			
-			// aapt resource value: 0x7f0b00b1
-			public const int notification_main_column = 2131427505;
+			// aapt resource value: 0x7f0b00b3
+			public const int notification_main_column = 2131427507;
 			
-			// aapt resource value: 0x7f0b00b0
-			public const int notification_main_column_container = 2131427504;
+			// aapt resource value: 0x7f0b00b2
+			public const int notification_main_column_container = 2131427506;
 			
 			// aapt resource value: 0x7f0b0056
 			public const int parallax = 2131427414;
@@ -2855,14 +2877,17 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b000b
 			public const int parent_matrix = 2131427339;
 			
-			// aapt resource value: 0x7f0b00a5
-			public const int passwordEditText = 2131427493;
+			// aapt resource value: 0x7f0b00a7
+			public const int passwordEditText = 2131427495;
+			
+			// aapt resource value: 0x7f0b00c0
+			public const int passwordRegisterEditText = 2131427520;
 			
 			// aapt resource value: 0x7f0b00bd
-			public const int passwordRegisterEditText = 2131427517;
+			public const int pickUpButton = 2131427517;
 			
-			// aapt resource value: 0x7f0b00bb
-			public const int pickUpMapFragment = 2131427515;
+			// aapt resource value: 0x7f0b00be
+			public const int pickUpMapFragment = 2131427518;
 			
 			// aapt resource value: 0x7f0b0057
 			public const int pin = 2131427415;
@@ -2876,20 +2901,20 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b007f
 			public const int radio = 2131427455;
 			
-			// aapt resource value: 0x7f0b00a7
-			public const int registerButton = 2131427495;
+			// aapt resource value: 0x7f0b00a9
+			public const int registerButton = 2131427497;
 			
-			// aapt resource value: 0x7f0b00bf
-			public const int registerViewButton = 2131427519;
+			// aapt resource value: 0x7f0b00c2
+			public const int registerViewButton = 2131427522;
 			
 			// aapt resource value: 0x7f0b0054
 			public const int right = 2131427412;
 			
-			// aapt resource value: 0x7f0b00b6
-			public const int right_icon = 2131427510;
+			// aapt resource value: 0x7f0b00b8
+			public const int right_icon = 2131427512;
 			
-			// aapt resource value: 0x7f0b00b2
-			public const int right_side = 2131427506;
+			// aapt resource value: 0x7f0b00b4
+			public const int right_side = 2131427508;
 			
 			// aapt resource value: 0x7f0b0020
 			public const int satellite = 2131427360;
@@ -2966,14 +2991,14 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0030
 			public const int showTitle = 2131427376;
 			
-			// aapt resource value: 0x7f0b0096
-			public const int smallLabel = 2131427478;
+			// aapt resource value: 0x7f0b0098
+			public const int smallLabel = 2131427480;
 			
-			// aapt resource value: 0x7f0b009d
-			public const int snackbar_action = 2131427485;
+			// aapt resource value: 0x7f0b009f
+			public const int snackbar_action = 2131427487;
 			
-			// aapt resource value: 0x7f0b009c
-			public const int snackbar_text = 2131427484;
+			// aapt resource value: 0x7f0b009e
+			public const int snackbar_text = 2131427486;
 			
 			// aapt resource value: 0x7f0b004e
 			public const int snap = 2131427406;
@@ -2999,8 +3024,8 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0055
 			public const int start = 2131427413;
 			
-			// aapt resource value: 0x7f0b00ad
-			public const int status_bar_latest_event_content = 2131427501;
+			// aapt resource value: 0x7f0b00af
+			public const int status_bar_latest_event_content = 2131427503;
 			
 			// aapt resource value: 0x7f0b0080
 			public const int submenuarrow = 2131427456;
@@ -3029,8 +3054,8 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0073
 			public const int textSpacerNoTitle = 2131427443;
 			
-			// aapt resource value: 0x7f0b00a3
-			public const int text_input_password_toggle = 2131427491;
+			// aapt resource value: 0x7f0b00a5
+			public const int text_input_password_toggle = 2131427493;
 			
 			// aapt resource value: 0x7f0b0014
 			public const int textinput_counter = 2131427348;
@@ -3038,8 +3063,8 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0015
 			public const int textinput_error = 2131427349;
 			
-			// aapt resource value: 0x7f0b00b3
-			public const int time = 2131427507;
+			// aapt resource value: 0x7f0b00b5
+			public const int time = 2131427509;
 			
 			// aapt resource value: 0x7f0b001c
 			public const int title = 2131427356;
@@ -3056,8 +3081,8 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0078
 			public const int topPanel = 2131427448;
 			
-			// aapt resource value: 0x7f0b009a
-			public const int touch_outside = 2131427482;
+			// aapt resource value: 0x7f0b009c
+			public const int touch_outside = 2131427484;
 			
 			// aapt resource value: 0x7f0b000f
 			public const int transition_current_scene = 2131427343;
@@ -3086,8 +3111,11 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f0b0016
 			public const int view_offset_helper = 2131427350;
 			
-			// aapt resource value: 0x7f0b00c3
-			public const int visible = 2131427523;
+			// aapt resource value: 0x7f0b00c6
+			public const int visible = 2131427526;
+			
+			// aapt resource value: 0x7f0b0095
+			public const int webview = 2131427477;
 			
 			// aapt resource value: 0x7f0b0026
 			public const int wide = 2131427366;
@@ -3236,121 +3264,124 @@ namespace DeliveryPersonApp.Android
 			public const int abc_select_dialog_material = 2130968601;
 			
 			// aapt resource value: 0x7f04001a
-			public const int Deliver = 2130968602;
+			public const int activity_webview = 2130968602;
 			
 			// aapt resource value: 0x7f04001b
-			public const int design_bottom_navigation_item = 2130968603;
+			public const int Deliver = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
-			public const int design_bottom_sheet_dialog = 2130968604;
+			public const int design_bottom_navigation_item = 2130968604;
 			
 			// aapt resource value: 0x7f04001d
-			public const int design_layout_snackbar = 2130968605;
+			public const int design_bottom_sheet_dialog = 2130968605;
 			
 			// aapt resource value: 0x7f04001e
-			public const int design_layout_snackbar_include = 2130968606;
+			public const int design_layout_snackbar = 2130968606;
 			
 			// aapt resource value: 0x7f04001f
-			public const int design_layout_tab_icon = 2130968607;
+			public const int design_layout_snackbar_include = 2130968607;
 			
 			// aapt resource value: 0x7f040020
-			public const int design_layout_tab_text = 2130968608;
+			public const int design_layout_tab_icon = 2130968608;
 			
 			// aapt resource value: 0x7f040021
-			public const int design_menu_item_action_area = 2130968609;
+			public const int design_layout_tab_text = 2130968609;
 			
 			// aapt resource value: 0x7f040022
-			public const int design_navigation_item = 2130968610;
+			public const int design_menu_item_action_area = 2130968610;
 			
 			// aapt resource value: 0x7f040023
-			public const int design_navigation_item_header = 2130968611;
+			public const int design_navigation_item = 2130968611;
 			
 			// aapt resource value: 0x7f040024
-			public const int design_navigation_item_separator = 2130968612;
+			public const int design_navigation_item_header = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int design_navigation_item_subheader = 2130968613;
+			public const int design_navigation_item_separator = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int design_navigation_menu = 2130968614;
+			public const int design_navigation_item_subheader = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int design_navigation_menu_item = 2130968615;
+			public const int design_navigation_menu = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int design_text_input_password_icon = 2130968616;
+			public const int design_navigation_menu_item = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int Main = 2130968617;
+			public const int design_text_input_password_icon = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int notification_action = 2130968618;
+			public const int Main = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int notification_action_tombstone = 2130968619;
+			public const int notification_action = 2130968619;
 			
 			// aapt resource value: 0x7f04002c
-			public const int notification_media_action = 2130968620;
+			public const int notification_action_tombstone = 2130968620;
 			
 			// aapt resource value: 0x7f04002d
-			public const int notification_media_cancel_action = 2130968621;
+			public const int notification_media_action = 2130968621;
 			
 			// aapt resource value: 0x7f04002e
-			public const int notification_template_big_media = 2130968622;
+			public const int notification_media_cancel_action = 2130968622;
 			
 			// aapt resource value: 0x7f04002f
-			public const int notification_template_big_media_custom = 2130968623;
+			public const int notification_template_big_media = 2130968623;
 			
 			// aapt resource value: 0x7f040030
-			public const int notification_template_big_media_narrow = 2130968624;
+			public const int notification_template_big_media_custom = 2130968624;
 			
 			// aapt resource value: 0x7f040031
-			public const int notification_template_big_media_narrow_custom = 2130968625;
+			public const int notification_template_big_media_narrow = 2130968625;
 			
 			// aapt resource value: 0x7f040032
-			public const int notification_template_custom_big = 2130968626;
+			public const int notification_template_big_media_narrow_custom = 2130968626;
 			
 			// aapt resource value: 0x7f040033
-			public const int notification_template_icon_group = 2130968627;
+			public const int notification_template_custom_big = 2130968627;
 			
 			// aapt resource value: 0x7f040034
-			public const int notification_template_lines_media = 2130968628;
+			public const int notification_template_icon_group = 2130968628;
 			
 			// aapt resource value: 0x7f040035
-			public const int notification_template_media = 2130968629;
+			public const int notification_template_lines_media = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int notification_template_media_custom = 2130968630;
+			public const int notification_template_media = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int notification_template_part_chronometer = 2130968631;
+			public const int notification_template_media_custom = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int notification_template_part_time = 2130968632;
+			public const int notification_template_part_chronometer = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int PickUp = 2130968633;
+			public const int notification_template_part_time = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int Register = 2130968634;
+			public const int PickUp = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int select_dialog_item_material = 2130968635;
+			public const int Register = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int select_dialog_multichoice_material = 2130968636;
+			public const int select_dialog_item_material = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int select_dialog_singlechoice_material = 2130968637;
+			public const int select_dialog_multichoice_material = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int support_simple_spinner_dropdown_item = 2130968638;
+			public const int select_dialog_singlechoice_material = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int Tabs = 2130968639;
+			public const int support_simple_spinner_dropdown_item = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int tooltip = 2130968640;
+			public const int Tabs = 2130968640;
+			
+			// aapt resource value: 0x7f040041
+			public const int tooltip = 2130968641;
 			
 			static Layout()
 			{
@@ -3386,6 +3417,12 @@ namespace DeliveryPersonApp.Android
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f080039
+			public const int ApplicationName = 2131230777;
+			
+			// aapt resource value: 0x7f080038
+			public const int Hello = 2131230776;
 			
 			// aapt resource value: 0x7f080011
 			public const int abc_action_bar_home_description = 2131230737;
@@ -3474,11 +3511,11 @@ namespace DeliveryPersonApp.Android
 			// aapt resource value: 0x7f080021
 			public const int abc_toolbar_collapse_description = 2131230753;
 			
-			// aapt resource value: 0x7f080039
-			public const int action_settings = 2131230777;
+			// aapt resource value: 0x7f08003c
+			public const int action_settings = 2131230780;
 			
-			// aapt resource value: 0x7f080038
-			public const int app_name = 2131230776;
+			// aapt resource value: 0x7f08003b
+			public const int app_name = 2131230779;
 			
 			// aapt resource value: 0x7f08002f
 			public const int appbar_scrolling_view_behavior = 2131230767;
@@ -3560,6 +3597,9 @@ namespace DeliveryPersonApp.Android
 			
 			// aapt resource value: 0x7f080037
 			public const int status_bar_notification_info_overflow = 2131230775;
+			
+			// aapt resource value: 0x7f08003a
+			public const int title_activity_webview = 2131230778;
 			
 			static String()
 			{

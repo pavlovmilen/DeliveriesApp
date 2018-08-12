@@ -32,7 +32,7 @@ namespace DeliveriesApp.Droid
 
         private async void RegisterUser_Click(object sender, EventArgs e)
         {
-            var result = await Delivery.Register(_emailEditText.Text, _passwordEditText.Text,
+            var result = await User.Register(_emailEditText.Text, _passwordEditText.Text,
                 _confirmPasswordEditText.Text);
 
             if(result)

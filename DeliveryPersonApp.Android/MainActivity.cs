@@ -1,7 +1,9 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.Widget;
 using Android.OS;
 using Android.Support.V7.App;
+using DeliveriesApp.Models;
 
 namespace DeliveryPersonApp.Android
 {
@@ -32,9 +34,16 @@ namespace DeliveryPersonApp.Android
             StartActivity(typeof(RegisterActivity));
         }
 
-        private void LoginButton_Click(object sender, System.EventArgs e)
+        private async void LoginButton_Click(object sender, System.EventArgs e)
         {
-            StartActivity(typeof(TabsActivity));
+            var userId = await DeliveryPerson.Login(_emailEditText.Text, _passwordEditText.Text);
+
+            if (!string.IsNullOrEmpty(userId))
+            {
+                var intent = new Intent(this, typeof(TabsActivity));
+                intent.PutExtra("userId", userId);
+                StartActivity(intent);
+            }
         }
     }
 }

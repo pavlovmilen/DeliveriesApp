@@ -34,9 +34,9 @@ namespace DeliveriesApp.Models
             return true;
         }
 
-        public static async Task<bool> Login(string email, string password)
+        public static async Task<string> Login(string email, string password)
         {
-            var result = false;
+            var result = string.Empty;
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
@@ -47,7 +47,7 @@ namespace DeliveriesApp.Models
 
                 if (user != null)
                 {
-                    result = user.Password == password;
+                    result = user.Id;
                 }
             }
 
