@@ -24,6 +24,10 @@ namespace DeliveryPersonApp.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton RegisterSaveButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField UsenameTextField { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -36,6 +40,11 @@ namespace DeliveryPersonApp.iOS
             if (PasswordTextField != null) {
                 PasswordTextField.Dispose ();
                 PasswordTextField = null;
+            }
+
+            if (RegisterSaveButton != null) {
+                RegisterSaveButton.Dispose ();
+                RegisterSaveButton = null;
             }
 
             if (UsenameTextField != null) {
