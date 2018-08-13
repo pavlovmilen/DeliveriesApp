@@ -221,7 +221,7 @@
                             <outlet property="delegate" destination="842" id="845"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="1179"/>
+                    <tabBarItem key="tabBarItem" title="Delivering" id="1179"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="848" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -269,7 +269,7 @@
                             <outlet property="delegate" destination="853" id="856"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="1059"/>
+                    <tabBarItem key="tabBarItem" title="Waiting" id="1059"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="859" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -314,7 +314,7 @@
                             <outlet property="delegate" destination="864" id="867"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="983"/>
+                    <tabBarItem key="tabBarItem" title="Delivered" id="983"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="870" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -345,6 +345,12 @@
                             <constraint id="2783" firstItem="2762" firstAttribute="trailing" secondItem="1186" secondAttribute="trailingMargin" constant="16"/>
                         </constraints>
                     </view>
+                    <navigationItem title="Pick Up" id="3145" key="navigationItem">
+                        <barButtonItem key="rightBarButtonItem" id="3148" title="PickUp"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="PuckUpBarButtonItem" destination="3148" id="name-outlet-3148"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1187" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -373,6 +379,12 @@
                             <constraint id="2778" firstItem="1193" firstAttribute="leadingMargin" secondItem="2761" secondAttribute="leading" constant="16"/>
                         </constraints>
                     </view>
+                    <navigationItem id="3144" key="navigationItem" title="Deilver">
+                        <barButtonItem key="rightBarButtonItem" title="Deliver" id="3147"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="DeliverBarButtonItem" destination="3147" id="name-outlet-3147"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1194" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using UIKit;
 
 namespace DeliveryPersonApp.iOS
@@ -11,23 +12,25 @@ namespace DeliveryPersonApp.iOS
         {
         }
 
-        public override void ViewDidAppear(bool animated)
+        public override async void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
 
-            NavigationItem.SetHidesBackButton(true, false);
+            await Task.Delay(1000);
 
-            if(TabBarController.ViewControllers[0] is DeliveringTableViewController deliveringVC)
+            NavigationItem.SetHidesBackButton(true, false);
+            
+            if(TabBarController?.ViewControllers[0] is DeliveringTableViewController deliveringVC)
             {
                 deliveringVC.UserId = UserId;
             }
 
-            if(TabBarController.ViewControllers[1] is WaitingTableViewController waitingVC)
+            if(TabBarController?.ViewControllers[1] is WaitingTableViewController waitingVC)
             {
                 waitingVC.UserId = UserId;
             }
 
-            if(TabBarController.ViewControllers[2] is WaitingTableViewController deliveredVC)
+            if(TabBarController?.ViewControllers[2] is WaitingTableViewController deliveredVC)
             {
                 deliveredVC.UserId = UserId;
             }

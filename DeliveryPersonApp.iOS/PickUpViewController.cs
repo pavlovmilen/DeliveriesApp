@@ -13,5 +13,17 @@ namespace DeliveryPersonApp.iOS
         public PickUpViewController (IntPtr handle) : base (handle)
         {
         }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            PuckUpBarButtonItem.Clicked += PuckUpBarButtonItem_Clicked;
+        }
+
+        private async void PuckUpBarButtonItem_Clicked(object sender, EventArgs e)
+        {
+            await Delivery.MarkAsPickedUp(Delivery, UserId);
+        }
     }
 }
