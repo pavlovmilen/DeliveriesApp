@@ -52,7 +52,7 @@
                                 <rect key="frame" x="16" y="318.5" width="343" height="30"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
-                                    <segue id="1344" destination="476" kind="show" identifier="LoginSegue"/>
+                                    <segue id="3628" destination="3530" kind="show" identifier="LoginSegue"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1229" translatesAutoresizingMaskIntoConstraints="NO">
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="244" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-266" y="-390"/>
+            <point key="canvasLocation" x="-335" y="-368"/>
         </scene>
         <scene sceneID="454">
             <objects>
@@ -162,24 +162,6 @@
             </objects>
             <point key="canvasLocation" x="-270" y="548"/>
         </scene>
-        <scene sceneID="475">
-            <objects>
-                <tabBarController id="476" sceneMemberID="viewController" customClass="MainTabBarViewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="479">
-                        <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue id="984" destination="864" kind="relationship" relationship="viewControllers"/>
-                        <segue id="1060" destination="853" kind="relationship" relationship="viewControllers"/>
-                        <segue id="1180" destination="842" kind="relationship" relationship="viewControllers"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="480" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="254" y="-79"/>
-        </scene>
         <scene sceneID="841">
             <objects>
                 <tableViewController id="842" sceneMemberID="viewController" customClass="DeliveringTableViewController">
@@ -212,7 +194,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue id="2599" destination="1192" kind="show" trigger="accessoryAction" identifier="DeliverSegue"/>
+                                    <segue id="7025" destination="1192" kind="show" identifier="DeliverSegue"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -336,6 +318,13 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="2762" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="7528" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="574" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Get Directions" id="7529"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <constraints>
                             <constraint id="2779" firstItem="2762" firstAttribute="top" secondItem="1182" secondAttribute="bottom"/>
@@ -350,6 +339,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="PuckUpBarButtonItem" destination="3148" id="name-outlet-3148"/>
+                        <outlet property="PickUpMapView" destination="2762" id="name-outlet-2762"/>
+                        <outlet property="navigateBarButtonItem" destination="7529" id="name-outlet-7529"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1187" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -371,6 +362,13 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="2761" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="7526" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="574" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Get Directions" id="7527"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <constraints>
                             <constraint id="2775" firstItem="2761" firstAttribute="top" secondItem="1189" secondAttribute="bottom"/>
@@ -384,11 +382,31 @@
                     </navigationItem>
                     <connections>
                         <outlet property="DeliverBarButtonItem" destination="3147" id="name-outlet-3147"/>
+                        <outlet property="DeliveryMapView" destination="2761" id="name-outlet-2761"/>
+                        <outlet property="navigateBarButtonItem" destination="7527" id="name-outlet-7527"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1194" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="-640"/>
+            <point key="canvasLocation" x="1448" y="-696"/>
+        </scene>
+        <scene sceneID="3529">
+            <objects>
+                <tabBarController id="3530" sceneMemberID="viewController" customClass="MainTabBarViewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="3533">
+                        <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue id="4050" destination="842" kind="relationship" relationship="viewControllers"/>
+                        <segue id="4157" destination="853" kind="relationship" relationship="viewControllers"/>
+                        <segue id="4280" destination="864" kind="relationship" relationship="viewControllers"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3534" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="-341"/>
         </scene>
     </scenes>
 </document>

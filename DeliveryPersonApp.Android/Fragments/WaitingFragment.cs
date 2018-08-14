@@ -35,7 +35,7 @@ namespace DeliveryPersonApp.Android.Fragments
 
             var selectedDelivery = _deliveries[position];
             var userId = (Activity as TabsActivity)?.UserId;
-            var intent = new Intent(Activity, typeof(DeliverActivity));
+            var intent = new Intent(Activity, typeof(PickUpActivity));
             intent.PutExtra("latitude", selectedDelivery.OriginLatitude);
             intent.PutExtra("longitude", selectedDelivery.OriginLongitude);
             intent.PutExtra("userId", userId);

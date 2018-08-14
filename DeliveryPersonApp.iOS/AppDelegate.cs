@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using Microsoft.WindowsAzure.MobileServices;
 using UIKit;
 
 namespace DeliveryPersonApp.iOS
@@ -20,8 +21,8 @@ namespace DeliveryPersonApp.iOS
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
-
-			return true;
+			CurrentPlatform.Init();
+		    return true;
 		}
 
 		public override void OnResignActivation(UIApplication application)
