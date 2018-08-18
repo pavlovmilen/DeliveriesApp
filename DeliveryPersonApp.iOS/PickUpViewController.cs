@@ -46,7 +46,26 @@ namespace DeliveryPersonApp.iOS
 
         private async void PuckUpBarButtonItem_Clicked(object sender, EventArgs e)
         {
-            await Delivery.MarkAsPickedUp(Delivery, UserId);
+            var haptic = new UINotificationFeedbackGenerator();
+            haptic.Prepare();
+
+            var pickedUp = await Delivery.MarkAsPickedUp(Delivery, UserId);
+
+            UIAlertController alert = null;
+            if (pickedUp)
+            {
+                haptic.NotificationOccurred(UINotificationFeedbackType.Success);
+                alert = UIAlertController.Create("Success", "Delivery set as picked up", UIAlertControllerStyle.Alert);
+            }
+            else
+            {
+                haptic.NotificationOccurred(UINotificationFeedbackType.Error);
+                alert = UIAlertController.Create("Failure", "Please try agail", UIAlertControllerStyle.Alert);
+            }
+
+            alert.AddAction(UIAlertAction.Create("Ok", UIAlertActionStyle.Default, null));
+
+            PresentViewController(alert, true, null);
         }
     }
 }

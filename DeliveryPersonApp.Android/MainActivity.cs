@@ -14,7 +14,8 @@ using DeliveriesApp.Models;
 
 namespace DeliveryPersonApp.Android
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true, Name = "DeliveryPersonApp.Android.MainActivity", Exported = true)]
+    [MetaData("android.app.shortcuts", Resource = "@xml/shortcuts")]
     public class MainActivity : AppCompatActivity
     {
         private EditText _emailEditText, _passwordEditText;
@@ -35,7 +36,7 @@ namespace DeliveryPersonApp.Android
 
             _fingerprintManager = FingerprintManagerCompat.From(this);
             _cancellationSignal = new global::Android.Support.V4.OS.CancellationSignal();
-            _preferences = PreferenceManager.GetDefaultSharedPreferences(this);
+            _preferences = Application.Context.GetSharedPreferences("UserInfo", FileCreationMode.Private);
 
             _emailEditText = FindViewById<EditText>(Resource.Id.emailEditText);
             _passwordEditText = FindViewById<EditText>(Resource.Id.passwordEditText);
@@ -44,6 +45,12 @@ namespace DeliveryPersonApp.Android
 
             _loginButton.Click += LoginButton_Click;
             _registerButton.Click += RegisterButton_Click;
+
+            if (string.IsNullOrEmpty(Intent?.Data?.LastPathSegment)) return;
+            if (Intent.Data.LastPathSegment == "register")
+            {
+                StartActivity(typeof(RegisterActivity));
+            }
         }
 
         private void RegisterButton_Click(object sender, System.EventArgs e)
@@ -81,6 +88,7 @@ namespace DeliveryPersonApp.Android
         private void LogUserIn()
         {
             var authenticationCallback = new AuthenticationCallback(this, _userId);
+            Toast.MakeText(this, "Place fingerprint on sensor", ToastLength.Long).Show();
             _fingerprintManager.Authenticate(null, 0, _cancellationSignal, authenticationCallback, null);
         }
 
